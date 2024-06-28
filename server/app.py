@@ -23,7 +23,6 @@ api = Api(app)
 def index():
     return "<h1>Code challenge</h1>"
 
-
 @app.route("/restaurants", methods = ["GET","POST"])
 def restaurants():
     if request.method == "GET":
