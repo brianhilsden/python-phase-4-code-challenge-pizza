@@ -19,7 +19,6 @@ db.init_app(app)
 
 api = Api(app)
 
-
 @app.route("/")
 def index():
     return "<h1>Code challenge</h1>"
