@@ -112,7 +112,7 @@ def restaurant_pizzas():
             return response
         
         except ValueError as e:
-            message = {"errors":["validation errors"]}
+            message = {"errors":[f"validation errors:{e}"]}
             response = make_response(message,400)
             return response
 
