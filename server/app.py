@@ -63,7 +63,6 @@ def restaurant_by_id(id):
         elif request.method == "DELETE":
             db.session.delete(restaurant)
             db.session.commit()
-
             response = make_response({},204)
             return response
     
@@ -111,8 +110,8 @@ def restaurant_pizzas():
             response = make_response(restaurant_pizza.to_dict(),201,{"Content-Type":"application/json"})
             return response
         
-        except ValueError as e:
-            message = {"errors":[f"validation errors:{e}"]}
+        except ValueError:
+            message = {"errors":["validation errors"]}
             response = make_response(message,400)
             return response
 
